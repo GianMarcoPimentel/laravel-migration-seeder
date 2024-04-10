@@ -16,8 +16,8 @@
                  <p>Orario di arrivo : {{$train->arrival_time}}</p>
                  <p>Codice del treno : {{$train->train_code}}</p> 
                  <p>Numero Carrozza : {{$train->carriage_number}}</p>
-                 <p>In orario :  @if ($train->on_time==1) Si @else in Ritardo @endif </p>
-                 <p>Cancellato :  @if ($train->deleted==1) Cancellato @else In Arrvio @endif</p>
+                 <p>In orario : @if ($train->on_time == 1) Si @else in Ritardo @endif </p>
+                 <p>Cancellato : @if ($train->deleted ==1 ) Cancellato @else In Arrvio @endif</p>
                 </li>
              </ul>
          @endforeach

@@ -1,1 +1,25 @@
 @import "~bootstrap/scss/bootstrap";
+
+.trains{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+    gap: 10px;
+    ul{
+        
+        list-style-type: none;
+
+        width: calc(100% / 2 - (10px * 2 / 1));
+
+        li{
+            background-color:  rgb(202, 83, 4);
+            height: 400px;
+            
+            padding: 12px;
+        
+        }
+
+       
+    }
+}
