@@ -18,20 +18,22 @@ class TrainSeeder extends Seeder
     {
         // creo nuova istanza per la classe train (una nuova riga)
 
-        
+        for ($i = 0; $i < 10; $i++) {
         $newTrain = new Train();
-        $newTrain->company = $faker->sentence();
-        $newTrain->departured = "Genova Brignole";
-        $newTrain->arrival_station = "Milano Centrale";
+        $newTrain->company = $faker->company();
+        $newTrain->departured = $faker->city();
+        $newTrain->arrival_station = $faker->city();
         $newTrain->started_time = "08:00:00";
         $newTrain->arrival_time = "12:00:00";
-        $newTrain->train_code = "IT696969";
-        $newTrain->carriage_number = 10;
-        $newTrain->on_time = true;
-        $newTrain->deleted = false;
+        $newTrain->train_code = $faker->numerify('IT######');
+        $newTrain->carriage_number = $faker->randomDigitNotNull();
+        $newTrain->on_time = $faker->boolean();
+        $newTrain->deleted = $faker->boolean();
         
         // salvo la riga
         $newTrain->save();
+
+        }
         
 
 
