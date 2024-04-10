@@ -3,19 +3,24 @@
 namespace Database\Seeders;
 
 use App\Models\Train;
+
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+//aggiungo la riga di codice per utilizzare i Faker
+use Faker\Generator as Faker;
 class TrainSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run(Faker $faker): void
     {
         // creo nuova istanza per la classe train (una nuova riga)
+
+        
         $newTrain = new Train();
-        $newTrain->company = "TrenItalia";
+        $newTrain->company = $faker->sentence();
         $newTrain->departured = "Genova Brignole";
         $newTrain->arrival_station = "Milano Centrale";
         $newTrain->started_time = "08:00:00";
@@ -27,6 +32,9 @@ class TrainSeeder extends Seeder
         
         // salvo la riga
         $newTrain->save();
+        
+
+
         
        
     }
